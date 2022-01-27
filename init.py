@@ -42,6 +42,8 @@ custom = {
     'MINIO_SECRET_KEY': generate_random_text(),
     'RABBITMQ_DEFAULT_USER': generate_random_text(),
     'RABBITMQ_DEFAULT_PASS': generate_random_text()
+    'MINIO_ROOT_USER': generate_random_text(),
+    'MINIO_ROOT_PASSWORD': generate_random_text()  
 }
 
 for key, val in custom.items():
