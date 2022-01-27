@@ -31,4 +31,4 @@ sudo systemctl start docker.service
 sudo systemctl start containerd.service
 sudo apt-get install docker-compose -y
 newgrp docker
-docker-compose up -d
+echo "run 'docker-compose up -d' to deploy"
