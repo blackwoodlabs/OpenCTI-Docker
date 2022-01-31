@@ -183,22 +183,6 @@ services:
       - opencti
 volumes:
   esdata:
-    driver: local
-    driver_opts:
-      o: bind
-      type: none
-  s3data:
-    driver: local
-    driver_opts:
-      o: bind
-      type: none      
+  s3data:  
   redisdata:
-    driver: local
-    driver_opts:
-      o: bind
-      type: none
   amqpdata:
-    driver: local
-    driver_opts:
-      o: bind
-      type: none
