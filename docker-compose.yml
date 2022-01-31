@@ -11,6 +11,7 @@ services:
       - esdata:/usr/share/elasticsearch/data
     environment:
       - discovery.type=single-node
+      - "ES_JAVA_OPTS=-Xms8G -Xmx8G"
       - xpack.ml.enabled=false
     restart: always
     ulimits:
