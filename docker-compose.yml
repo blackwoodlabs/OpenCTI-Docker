@@ -72,7 +72,7 @@ services:
       - SMTP__PORT=25
       - PROVIDERS__OPENID__STRATEGY=OpenIDConnectStrategy 
       - "PROVIDERS__OPENID__CONFIG__LABEL=Login with OpenID"
-      - PROVIDERS__OPENID__CONFIG__ISSUER=https://login.microsoftonline.com/{TENANT_ID}/v2.0
+      - PROVIDERS__OPENID__CONFIG__ISSUER=https://login.microsoftonline.com/${TENANT_ID}/v2.0
       - PROVIDERS__OPENID__CONFIG__CLIENT_ID=${OID_CLIENT_ID}
       - PROVIDERS__OPENID__CONFIG__CLIENT_SECRET=${OID_CLIENT_SECRET}
       - "PROVIDERS__OPENID__CONFIG__REDIRECT_URIS=[\"https://${OID_REDIRECT_URI}/auth/oic/callback\"]"
