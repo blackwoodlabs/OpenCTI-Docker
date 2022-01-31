@@ -7,6 +7,16 @@ read -p "What is the SMTP Relay Hostname? " smtprelay
 echo SMTP_HOSTNAME=$smtprelay | sudo tee -a ./.env
 read -p "What is the Admin email address? " adminemail
 echo OPENCTI_ADMIN_EMAIL=$adminemail | sudo tee -a ./.env
+read -p "What is the Azure Tenant ID? " tenantid
+echo TENANT_ID=$tenantid | sudo tee -a ./.env
+read -p "What is the OpenID Client ID? " oidcid
+echo OID_CLIENT_ID=$oidcid | sudo tee -a ./.env
+read -p "What is the OpenID Client Secret? " oidcs
+echo OID_CLIENT_SECRET=$oidcs | sudo tee -a ./.env
+DRIFACE=$(route | grep -i default | awk '{print $8}')
+DRIFACEADDR=$(ip addr show $DRIFACE | grep -i "inet " | cut -d'/' -f1 | grep -o '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}')
+echo "Setting OID Redirect URI to $DRIFACEADDR - alter in .env file if required"
+echo OID_REDIRECT_URI=$DRIFACEADDR | sudo tee -a ./.env
 python3 init.py
 sudo apt-get purge docker-ce docker-ce-cli containerd.io
 sudo rm -rf /var/lib/docker
